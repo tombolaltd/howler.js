@@ -1969,7 +1969,7 @@
       var data = atob(url.split(',')[1]);
       var dataView = new Uint8Array(data.length);
       for (var i=0; i<data.length; ++i) {
-        dataView[i] = data.charCodeAt(i);
+        dataView[i] = data.charCodeAt(i) & 0xff;
       }
 
       decodeAudioData(dataView.buffer, self);
