@@ -1862,6 +1862,7 @@
         // Setup the new audio node.
         self._node.src = parent._src;
         self._node.preload = 'auto';
+        self._node.autoplay = true;
         self._node.volume = volume * Howler.volume();
 
         // Begin loading the source.
