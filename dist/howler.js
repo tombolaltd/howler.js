@@ -683,9 +683,10 @@
           node.muted = sound._muted || self._muted || Howler._muted || node.muted;
           node.volume = sound._volume * Howler.volume();
           node.playbackRate = sound._rate;
+          node.autoplay = true;
 
           setTimeout(function() {
-            node.play();
+            node.load();
 
             // Setup the new end timer.
             if (timeout !== Infinity) {
@@ -1862,7 +1863,6 @@
         // Setup the new audio node.
         self._node.src = parent._src;
         self._node.preload = 'auto';
-        self._node.autoplay = true;
         self._node.volume = volume * Howler.volume();
 
         // Begin loading the source.
